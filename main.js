@@ -1,16 +1,24 @@
-const GAME_CHOICE = [1, 2, 3];
-let playerChoice = 'rock';
-let computer = computerPlay();
 // 1 - Rock
 // 2 - Paper
 // 3 - Scissors
 
+// main game function 
+function game() {
+	let i = 0;
+	while (i < 5) {
+		let playerChoice = prompt('Your short: ', 'rock'); // ask for input
+		console.log(start(playerChoice, computerPlay()));
+		i++;
+	}
+}
+
 // randomly pick from the game choices for computer AI
 function computerPlay() {
+	const GAME_CHOICE = [1, 2, 3];
 	return GAME_CHOICE[Math.floor(Math.random() * GAME_CHOICE.length)];
 }
 
-function selectWinner(playerSelection, computerSelection) {
+function start(playerSelection, computerSelection) {
 	let player;
 	switch (playerSelection.toLowerCase()) {
 		case 'rock':
@@ -36,7 +44,3 @@ function selectWinner(playerSelection, computerSelection) {
 		return 'YOU ROCK!'; // you win
 	}
 }
-
-// call the game
-console.log(computer);
-console.log(selectWinner(playerChoice, computer));
