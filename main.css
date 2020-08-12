@@ -63,7 +63,7 @@ img {
     text-align: center;
 }
 
-#chosen {
+.chosen {
     display: block;
     width: 200px;
     margin: 1.875rem auto;
