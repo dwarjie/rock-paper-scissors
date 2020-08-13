@@ -27,7 +27,8 @@ function checkPick(e) {
 		playerChoice = 2;
 	}
 	showPickedCards(playerChoice, 'left-side');
-	console.log(checkWinner(playerChoice, computerPlay()));
+	let winner = checkWinner(playerChoice, computerPlay());
+	showWinner(winner);
 }
 
 // check who is the winner
@@ -36,13 +37,13 @@ function checkWinner(playerSelection, computerSelection) {
 	if (playerSelection == computerSelection) {
 		return 'DRAW';
 	} else if (playerSelection == 1 && computerSelection == 2) {
-		return 'You LOSE!';
+		return 'COMPUTER WINS!';
 	} else if (playerSelection == 2 && computerSelection == 3) {
-		return 'You SUCK!';
+		return 'COMPUTER WINS!';
 	} else if (playerSelection == 3 && computerSelection == 1) {
-		return 'You FUCK!';
+		return 'COMPUTER WINS!';
 	} else {
-		return 'YOU ROCK!'; // you win
+		return 'HOLLY SHIT!'; // you win
 	}
 }
 
@@ -71,12 +72,22 @@ function cardImage(chosenCard) {
 	return cardPath;
 }
 
+// Change the image path to the corresponding card
 function showPickedCards(chosenCard, cardSide) {
 	let cardPath = cardImage(chosenCard);
 	const parentElem = document.querySelector(`.${cardSide}`);
-	// create a img new element
-	const pickedCard = document.createElement('img');
+	let elemClass;
+	if (cardSide == 'left-side') {
+		elemClass = 'left-chosen';
+	} else {
+		elemClass = 'right-chosen';
+	}
+	const pickedCard = document.querySelector(`.${elemClass}`);
 	pickedCard.setAttribute('src', cardPath);
-	pickedCard.classList.add('chosen');
-	parentElem.appendChild(pickedCard);
+}
+
+// Show the winner
+function showWinner(winner) {
+	const winnerText = document.querySelector('.winner');
+	winnerText.innerText = winner;
 }

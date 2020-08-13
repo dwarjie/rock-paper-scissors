@@ -26,6 +26,7 @@ img {
 
 .arena {
     display: flex;
+    padding: 1rem;
 }
 
 /* TEXT */
@@ -38,6 +39,10 @@ img {
 
 .text-player {
     margin-top: 0.625rem;
+}
+
+.winner {
+    padding-top: 1.5rem;
 }
 
 /* SIDES */
