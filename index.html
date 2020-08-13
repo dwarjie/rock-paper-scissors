@@ -2,10 +2,35 @@
 <html lang="en">
 <head>
 	<meta charset="UTF-8">
+	<link href="https://fonts.googleapis.com/css2?family=Playfair+Display+SC:wght@700&display=swap" rel="stylesheet">
+	<link href="main.css" rel="stylesheet">
 	<title>Rock Paper and Scissors</title>
 </head>
 <body>
-
+	<div class="wrapper">
+		<h1 class="text text-player winner"></h1>
+		<!-- Main div for the battle -->
+		<div class="arena">
+			<div class="side left-side">
+				<img src="img/card-paper.png" alt="Player Chosen Card" class="left-chosen chosen">
+				<div class="choices left-choices">
+					<img src="img/card-rock.png" alt="Rock Card" class="card card-playable card-rock">
+					<img src="img/card-paper.png" alt="Paper Card" class="card card-playable card-paper">
+					<img src="img/card-scissors.png" alt="Scissors Card" class="card card-playable card-scissors">
+				</div>
+				<h1 class="text text-player">Player</h1>
+			</div>
+			<div class="side right-side">
+				<img src="img/card-paper.png" alt="Player Chosen Card" class="right-chosen chosen">
+				<div class="choices right-choices">
+					<img src="img/card-rock.png" alt="Rock Card" class="card">
+					<img src="img/card-paper.png" alt="Paper Card" class="card">
+					<img src="img/card-scissors.png" alt="Scissors Card" class="card">
+				</div>
+				<h1 class="text text-player">Computer</h1>
+			</div>
+		</div>
+	</div>
 	<!-- main game -->
 	<script src="main.js"></script>
 </body>
